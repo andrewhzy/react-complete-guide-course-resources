@@ -1,11 +1,18 @@
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
+function genRandomInt() {
+  console.log('Generating a random number...');
+  const length = reactDescriptions.length;
+  let randomNumber = Math.random();
+  console.log('length:', length);
+  console.log('randomNumber:', randomNumber);
+  console.log('randomNumber * length:', randomNumber * length);
+  console.log('Math.floor(randomNumber * length):', Math.floor(randomNumber * length));
+  return Math.floor(randomNumber * length);
 }
 
 function Header() {
-  const description = reactDescriptions[genRandomInt(2)];
+  const description = reactDescriptions[genRandomInt()];
 
   return (
     <header>

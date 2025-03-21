@@ -6,14 +6,9 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  const [ selectedTopic, setSelectedTopic ] = useState('Please click a button');
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  const [selectedTopic1, setSelectedTopic1] = useState('Please click a button');
   
-  function handleSelect(selectedButton) {
-    // selectedButton => 'components', 'jsx', 'props', 'state'
-    setSelectedTopic(selectedButton);
-    // console.log(selectedTopic);
-  }
-
   console.log('APP COMPONENT EXECUTING');
 
   return (
@@ -36,14 +31,26 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect('components')}>
+            <TabButton onSelect={() => setSelectedTopic('components')}>
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
+            <TabButton onSelect={() => setSelectedTopic('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => setSelectedTopic('props')}>Props</TabButton>
+            <TabButton onSelect={() => setSelectedTopic('state')}>State</TabButton>
           </menu>
           {selectedTopic}
+        </section>
+        <section id="examples-1">
+          <h2>Examples-1</h2>
+          <menu>
+            <TabButton onSelect={() => setSelectedTopic1('components')}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => setSelectedTopic1('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => setSelectedTopic1('props')}>Props</TabButton>
+            <TabButton onSelect={() => setSelectedTopic1('state')}>State</TabButton>
+          </menu>
+          {selectedTopic1}
         </section>
       </main>
     </div>
